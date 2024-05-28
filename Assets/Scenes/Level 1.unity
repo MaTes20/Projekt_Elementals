@@ -16748,7 +16748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182657340}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.68, y: -3.4, z: 0}
+  m_LocalPosition: {x: 3.68, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17582,7 +17582,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704085098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.11, y: -3.4, z: 0}
+  m_LocalPosition: {x: 13.11, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17959,7 +17959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -797.6561, y: 430.36}
+  m_AnchoredPosition: {x: 803, y: 430.36}
   m_SizeDelta: {x: -1783.1775, y: -1001.1156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907926198
@@ -19205,11 +19205,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 309635979943599981, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -497
+      value: -728
       objectReference: {fileID: 0}
     - target: {fileID: 309635979943599981, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 432
+      value: 440
       objectReference: {fileID: 0}
     - target: {fileID: 309635981442083144, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
       propertyPath: m_AnchorMax.x
@@ -19219,6 +19219,22 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3142152258776670621, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142152258776670621, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142152258776670621, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6218283458516720449, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 374495580, guid: 080cb6d98b00c2645b2c41df5f69bc78, type: 3}
     - target: {fileID: 6391189602588512660, guid: 81267c82ea1a09d4d9ec7c0d9d28b4a6, type: 3}
       propertyPath: timer
       value: 
@@ -19289,6 +19305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1727641244}
     m_Modifications:
+    - target: {fileID: 8913079238355729816, guid: 6f1bf779ee9b42e43bdb27ed728deb01, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8913079238355729818, guid: 6f1bf779ee9b42e43bdb27ed728deb01, type: 3}
       propertyPath: m_RootOrder
       value: 0
