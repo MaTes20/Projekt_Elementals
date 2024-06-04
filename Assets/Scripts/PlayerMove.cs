@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     bool jump = false;
 
     [SerializeField] private AudioSource jumpSoundEffect;
+
     public CoinManager cm;
 
 
@@ -30,12 +31,12 @@ public class PlayerMove : MonoBehaviour
             jump = true;
             animator.SetBool("isJumping", true);
             jumpSoundEffect.Play();
-            
+
         }
     }
 
 
-   public void OnLanding()
+    public void OnLanding()
     {
         animator.SetBool("isJumping", false);
     }
@@ -55,4 +56,8 @@ public class PlayerMove : MonoBehaviour
             cm.coinCount++;
         }
     }
+
+   
+
+    
 }

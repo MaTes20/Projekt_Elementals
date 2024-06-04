@@ -20,4 +20,6 @@ public class CoinManager : MonoBehaviour
     {
         coinText.text = "Coin Count: " + coinCount.ToString();
     }
+
+    
 }

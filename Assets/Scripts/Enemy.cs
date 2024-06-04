@@ -6,13 +6,15 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
-    
+
+    public ScoreManager scoreManager;
     public Healthbar healthbar;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        scoreManager = FindObjectOfType<ScoreManager>();
     }
 
     public void TakeDamage(int damage)
@@ -30,6 +32,8 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died");
+        scoreManager.AddPoint();
+
         Destroy(gameObject);
     }
 
