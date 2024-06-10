@@ -429,6 +429,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 418367916051181429}
   fireElement: {fileID: 6933291037370820930, guid: b90214997df2b014bacdac352d637c2b, type: 3}
+  iceElement: {fileID: 3473447577170704717, guid: 6b1dea6bb323c3b49b914442008afe7f, type: 3}
+  stoneElement: {fileID: 2957356407420777229, guid: 12a0115079b88f442a42339cb58879f4, type: 3}
+  windElement: {fileID: 8844148838262238581, guid: 57d73c25a805fe9429a7e051e9a0f879, type: 3}
 --- !u!114 &418367915725274773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,7 +592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 418367916051181428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.84, y: 0.11, z: 0}
+  m_LocalPosition: {x: 2.5, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -700,7 +703,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -591105700, guid: 8ef000ed30033964fa0bf629416186c2, type: 3}
+  m_Sprite: {fileID: -1186880766, guid: 8ef000ed30033964fa0bf629416186c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1251,7 +1254,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 937726920, guid: 8ef000ed30033964fa0bf629416186c2, type: 3}
+  m_Sprite: {fileID: -2127768894, guid: 8ef000ed30033964fa0bf629416186c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

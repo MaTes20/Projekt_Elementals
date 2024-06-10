@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bd13ae97a1e37f42b9de14e58d3f65f
-      internalID: 937726920
+      spriteID: fde2e8933ccb3854eabc1e234a5e9b1a
+      internalID: -2127768894
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea55cfe6eef764848950ed2dc10c3ddf
-      internalID: -591105700
+      spriteID: 16d23f1d05e7f4d409151f027fcbf4b8
+      internalID: -1186880766
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      swordandshield_0: 937726920
-      swordandshield_1: -591105700
+      swordandshield_0: -2127768894
+      swordandshield_1: -1186880766
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

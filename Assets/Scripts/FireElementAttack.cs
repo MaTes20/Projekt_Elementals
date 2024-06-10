@@ -7,7 +7,10 @@ public class FireElementAttack : MonoBehaviour
 
     public Transform firePoint;
     public GameObject fireElement;
-   
+    public GameObject iceElement;
+    public GameObject stoneElement;
+    public GameObject windElement;
+
 
 
     // Update is called once per frame
@@ -15,13 +18,45 @@ public class FireElementAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Shoot();
+            ShootFire();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ShootIce();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ShootStone();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ShootWind();
         }
     }
 
 
-    void Shoot()
+    void ShootFire()
     {
         Instantiate(fireElement, firePoint.position, firePoint.rotation);
+    }
+
+    void ShootIce()
+    {
+        Instantiate(iceElement, firePoint.position, firePoint.rotation);
+
+    }
+
+    void ShootStone()
+    {
+        Instantiate(stoneElement, firePoint.position, firePoint.rotation);
+    }
+
+    void ShootWind()
+    {
+        Instantiate(windElement, firePoint.position, firePoint.rotation);
+
     }
 }
