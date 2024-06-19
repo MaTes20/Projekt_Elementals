@@ -6,6 +6,8 @@ public class FireBullet : MonoBehaviour
 {
     public float speed = 20f;
     public int damage = 40;
+    public float burnDuration = 5f; 
+    public float burnDamagePerSecond = 5f; 
     public Rigidbody2D rb;
 
 
@@ -22,6 +24,8 @@ public class FireBullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            enemy.StartBurning(burnDamagePerSecond, burnDuration);
+
         }
         Destroy(gameObject);
     }

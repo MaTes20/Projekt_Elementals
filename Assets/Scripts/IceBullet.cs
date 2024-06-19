@@ -7,6 +7,9 @@ public class IceBullet : MonoBehaviour
 
     public float speed = 13f;
     public int damage = 20;
+    public float slowDuration = 3f; 
+    public float slowAmount = 0.5f;
+
     public Rigidbody2D rb;
 
 
@@ -23,6 +26,8 @@ public class IceBullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            enemy.StartSlowing(slowAmount, slowDuration);
+
         }
         Destroy(gameObject);
     }
