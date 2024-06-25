@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed = 2f;
     private float originalMoveSpeed;
 
+    private EnemyStateMachine stateMachine;
 
 
     public ScoreManager scoreManager;
@@ -20,6 +21,8 @@ public class Enemy : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
         scoreManager = FindObjectOfType<ScoreManager>();
         originalMoveSpeed = moveSpeed;
+        stateMachine = GetComponent<EnemyStateMachine>();
+
 
     }
 
