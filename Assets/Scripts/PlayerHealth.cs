@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Timer timer;
     public Healthbar healthbar;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -27,7 +28,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void TakeDamage()
+    public void TakeDamage()
     {
         currentHealth -= damage;
 

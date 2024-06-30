@@ -10,13 +10,15 @@ public class EnemyStateMachine : MonoBehaviour
         Aggro,
         Attacking
     }
-
-
     public EnemyState currentState;
-    public Transform player;
-    public float aggroRange = 10f; // Vzdálenost, na kterou nepøítel zaène pronásledovat hráèe
-    public float attackRange = 2f; // Vzdálenost, na kterou nepøítel zaène útoèit na hráèe
-    public float attackCooldown = 1f; // Doba mezi útoky
+    public Transform player; // Odkazuje na objekt hráèe
+    public float aggroRange = 10f;
+    public float attackRange = 2f;
+    public float attackCooldown = 1f;
+    public int attackDamage = 20; // Poškození útoku nepøítele
+    public LayerMask groundLayer;
+    public float groundCheckDistance = 1f;
+    public Transform groundCheckPoint;
 
     private float attackCooldownTimer;
 
@@ -46,7 +48,6 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Guarding()
     {
-        // Logika pro hlídání
         if (Vector2.Distance(transform.position, player.position) < aggroRange)
         {
             currentState = EnemyState.Aggro;
@@ -55,7 +56,6 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Aggro()
     {
-        // Logika pro pronásledování hráèe
         if (Vector2.Distance(transform.position, player.position) < attackRange)
         {
             currentState = EnemyState.Attacking;
@@ -66,21 +66,18 @@ public class EnemyStateMachine : MonoBehaviour
         }
         else
         {
-            // Pohyb smìrem k hráèi
-            transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime * 3f);
+            MoveTowardsPlayer();
         }
     }
 
     void Attacking()
     {
-        // Logika pro útok na hráèe
         if (Vector2.Distance(transform.position, player.position) > attackRange)
         {
             currentState = EnemyState.Aggro;
         }
         else if (attackCooldownTimer <= 0f)
         {
-            // Proveïte útok
             Attack();
             attackCooldownTimer = attackCooldown;
         }
@@ -88,7 +85,25 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Attack()
     {
-        // Zde pøidejte kód pro útok na hráèe
-        Debug.Log("Nepøítel útoèí na hráèe!");
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>(); // Získání komponenty PlayerHealth
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(); // Udìlení poškození hráèi
+        }
+        Debug.Log("Nepøítel útoèí na hráèe a udìluje poškození!");
     }
+
+    void MoveTowardsPlayer()
+    {
+        if (IsGrounded())
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime * 3f);
+        }
+    }
+
+    bool IsGrounded()
+    {
+        return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckDistance, groundLayer);
+    }
+
 }
