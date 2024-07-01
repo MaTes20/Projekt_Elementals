@@ -17,6 +17,12 @@ public class PlayerMove : MonoBehaviour
 
     public CoinManager cm;
 
+    public Transform groundCheck; // Transform pro bod kontroly zemì
+    public float groundCheckRadius = 0.2f; // Polomìr kontroly zemì
+    public LayerMask groundLayer; // Vrstva pro zem
+
+    private bool isGrounded;
+
 
 
     void Update()
@@ -25,7 +31,10 @@ public class PlayerMove : MonoBehaviour
 
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
 
             jump = true;

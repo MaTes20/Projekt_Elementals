@@ -75494,6 +75494,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2126325066253407675, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
+      propertyPath: m_GroundCheck
+      value: 
+      objectReference: {fileID: 1822841884}
     - target: {fileID: 3844145184970882296, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
       propertyPath: timer
       value: 
@@ -75502,6 +75506,14 @@ PrefabInstance:
       propertyPath: cm
       value: 
       objectReference: {fileID: 1721124156}
+    - target: {fileID: 3970059073886955274, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1822841884}
+    - target: {fileID: 3970059073886955274, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
 --- !u!1 &1222882908
@@ -82653,6 +82665,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!4 &1822841884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2413678223667995107, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
+  m_PrefabInstance: {fileID: 1218156035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1836623131
 GameObject:
   m_ObjectHideFlags: 0
