@@ -19,13 +19,18 @@ public class EnemyStateMachine : MonoBehaviour
     public LayerMask groundLayer;
     public float groundCheckDistance = 1f;
     public Transform groundCheckPoint;
+    public float speed = 2f; // Rychlost pohybu nepøítele
+    public float gravityForce = 5f; // Síla gravitace pro udržení na zemi
 
     private float attackCooldownTimer;
+    private Rigidbody2D rb;
+    private bool facingRight = true;
 
     void Start()
     {
         currentState = EnemyState.Guarding;
         attackCooldownTimer = 0f;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -85,7 +90,7 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Attack()
     {
-        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>(); // Získání komponenty PlayerHealth
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(); // Udìlení poškození hráèi
@@ -97,13 +102,50 @@ public class EnemyStateMachine : MonoBehaviour
     {
         if (IsGrounded())
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, Time.deltaTime * 3f);
+            Vector2 direction = (player.position - transform.position).normalized;
+
+            // Nastavení rychlosti
+            rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+
+            // Otoèení nepøítele
+            if (direction.x > 0 && !facingRight)
+            {
+                Flip();
+            }
+            else if (direction.x < 0 && facingRight)
+            {
+                Flip();
+            }
+        }
+        else
+        {
+            ApplyGravity();
         }
     }
 
     bool IsGrounded()
     {
         return Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckDistance, groundLayer);
+    }
+
+    void ApplyGravity()
+    {
+        rb.AddForce(Vector2.down * gravityForce);
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0f, 180f, 0f);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheckPoint == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(groundCheckPoint.position, groundCheckPoint.position + Vector3.down * groundCheckDistance);
     }
 
 }
