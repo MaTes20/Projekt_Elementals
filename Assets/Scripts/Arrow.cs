@@ -38,9 +38,11 @@ public class Arrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 20;
-            
-            Destroy(gameObject);
+                other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 20;
+
+                Destroy(gameObject);
+           
         }
     }
+
 }
