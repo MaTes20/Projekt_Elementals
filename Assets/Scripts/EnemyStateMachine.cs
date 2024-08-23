@@ -8,7 +8,9 @@ public class EnemyStateMachine : MonoBehaviour
     {
         Guarding,
         Aggro,
-        Attacking
+        Attacking,
+        Stopped  // New state for when the enemy is stopped
+
     }
     public EnemyState currentState;
     public Transform player; // Odkazuje na objekt hr·Ëe
@@ -25,6 +27,8 @@ public class EnemyStateMachine : MonoBehaviour
     private float attackCooldownTimer;
     private Rigidbody2D rb;
     private bool facingRight = true;
+
+
 
     void Start()
     {
@@ -47,6 +51,11 @@ public class EnemyStateMachine : MonoBehaviour
                 break;
             case EnemyState.Attacking:
                 Attacking();
+                break;
+            case EnemyState.Stopped:
+                // Enemy is stopped, do nothing
+                rb.velocity = Vector2.zero; // Ensure enemy is not moving
+                rb.angularVelocity = 0f;
                 break;
         }
     }
@@ -138,6 +147,8 @@ public class EnemyStateMachine : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+
+   
 
     private void OnDrawGizmosSelected()
     {

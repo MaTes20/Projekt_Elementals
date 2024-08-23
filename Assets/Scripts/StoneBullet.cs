@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StoneBullet : MonoBehaviour
 {
-
     public float speed = 15f;
     public int damage = 30;
+    public float stopDuration = 2f;  // Duration for which the enemy's movement will be stopped
     public Rigidbody2D rb;
 
     void Start()
@@ -19,8 +19,9 @@ public class StoneBullet : MonoBehaviour
         Enemy enemy = hitInfo.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
-            enemy.TakeDamage(damage);
+            enemy.TakeDamage(damage); // Apply damage to the enemy
+            enemy.StartStopping(stopDuration); // Stop the enemy's movement for a duration
         }
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy the bullet after hitting the enemy
     }
 }

@@ -7,27 +7,23 @@ public class IceBullet : MonoBehaviour
 
     public float speed = 13f;
     public int damage = 20;
-    public float slowDuration = 3f; 
-    public float slowAmount = 0.5f;
+    public float freezeDuration = 3f;
+    public float freezeAmount = 0.5f;
 
     public Rigidbody2D rb;
-
 
     void Start()
     {
         rb.velocity = transform.right * speed;
-
     }
 
-   
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            enemy.StartSlowing(slowAmount, slowDuration);
-
+            enemy.StartFreezing(freezeAmount, freezeDuration); // Použijeme novou metodu StartFreezing
         }
         Destroy(gameObject);
     }

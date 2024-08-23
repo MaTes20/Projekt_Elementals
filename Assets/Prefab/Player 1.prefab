@@ -204,7 +204,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 39
+    m_Bits: 551
   m_GroundCheck: {fileID: 2413678223667995107}
   m_CeilingCheck: {fileID: 6272031837148206082}
   m_CrouchDisableCollider: {fileID: 0}
@@ -243,6 +243,11 @@ MonoBehaviour:
   runSpeed: 40
   jumpSoundEffect: {fileID: 2193277215658083934}
   cm: {fileID: 0}
+  groundCheck: {fileID: 2413678223667995107}
+  groundCheckRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!58 &620458610348598708
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -464,6 +469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  currentHealth: 0
   damage: 20
   timer: {fileID: 0}
   healthbar: {fileID: 784944082937424007}

@@ -38,10 +38,13 @@ public class Arrow : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-                other.gameObject.GetComponent<PlayerHealth>().currentHealth -= 20;
+            PlayerHealth playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage();  // Apply 20 damage to the player
+            }
 
-                Destroy(gameObject);
-           
+            Destroy(gameObject);  // Destroy the arrow after it hits the player
         }
     }
 

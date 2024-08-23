@@ -18,17 +18,21 @@ public class FireBullet : MonoBehaviour
         rb.velocity = transform.right * speed;
     }
 
+
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Enemy enemy = hitInfo.GetComponentInParent<Enemy>();
         if (enemy != null)
         {
+            // Deal immediate damage
             enemy.TakeDamage(damage);
-            enemy.StartBurning(burnDamagePerSecond, burnDuration);
 
+            // Start burning effect
+            enemy.StartBurning(burnDamagePerSecond, burnDuration);
         }
+
+        // Destroy the bullet after impact
         Destroy(gameObject);
     }
-
 
 }
