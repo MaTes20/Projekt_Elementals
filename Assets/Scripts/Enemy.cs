@@ -19,6 +19,10 @@ public class Enemy : MonoBehaviour
     private Coroutine slowCoroutine;  // Track the slow effect
     private Coroutine stopCoroutine;  // Track the stop effect
 
+    public ParticleSystem fireEffect;
+    public ParticleSystem freezeEffect;
+    public ParticleSystem hitEffect;
+
 
     void Start()
     {
@@ -28,6 +32,22 @@ public class Enemy : MonoBehaviour
         originalMoveSpeed = moveSpeed;
         stateMachine = GetComponent<EnemyStateMachine>();
 
+
+        // UjistÏte se, ûe Particle System je vypnut˝ na zaË·tku
+        if (fireEffect != null)
+        {
+            fireEffect.Stop();
+        }
+
+        if (freezeEffect != null)
+        {
+            freezeEffect.Stop();
+        }
+
+        if (hitEffect != null)
+        {
+            hitEffect.Stop();
+        }
 
     }
 
@@ -54,9 +74,16 @@ public class Enemy : MonoBehaviour
 
     public void StartBurning(float damagePerSecond, float duration)
     {
+        
         if (burnCoroutine != null)
         {
             StopCoroutine(burnCoroutine);
+        }
+
+        if (fireEffect != null)
+        {
+            // Spusù Particle System, kdyû nep¯Ìtel zaËne ho¯et
+            fireEffect.Play();
         }
 
         burnCoroutine = StartCoroutine(Burn(damagePerSecond, duration));
@@ -73,8 +100,11 @@ public class Enemy : MonoBehaviour
             yield return new WaitForSeconds(damageInterval);
             elapsedTime += damageInterval;
         }
-
+        {
+            fireEffect.Stop();
+        }
         burnCoroutine = null;
+        
     }
 
     public void StartSlowing(float slowAmount, float duration)
@@ -104,6 +134,12 @@ public class Enemy : MonoBehaviour
         if (stateMachine.currentState != EnemyStateMachine.EnemyState.Stopped)
         {
             stateMachine.currentState = EnemyStateMachine.EnemyState.Stopped;
+
+            if (hitEffect != null)
+            {
+                hitEffect.Play();
+            }
+
             StartCoroutine(StopMovement(duration));
         }
     }
@@ -123,6 +159,12 @@ public class Enemy : MonoBehaviour
         moveSpeed = originalSpeed; // Resume the enemy's original speed after stopping
         stateMachine.currentState = EnemyStateMachine.EnemyState.Aggro; // Return to Aggro state or any other appropriate state
         Debug.Log("Enemy resumes movement. Speed restored.");
+
+
+        if (hitEffect != null)
+        {
+            hitEffect.Stop();
+        }
     }
 
 
@@ -132,8 +174,17 @@ public class Enemy : MonoBehaviour
         if (stateMachine.currentState != EnemyStateMachine.EnemyState.Stopped)
         {
             Debug.Log("Enemy freezing by " + (freezeAmount * 100) + "% for " + duration + " seconds.");
+
+            if (freezeEffect != null)
+            {
+                freezeEffect.Play();
+            }
+
             StartCoroutine(Freeze(freezeAmount, duration)); // Pouûijeme novou metodu Freeze
         }
+
+       
+
     }
 
     private IEnumerator Freeze(float freezeAmount, float duration)
@@ -146,6 +197,12 @@ public class Enemy : MonoBehaviour
 
         stateMachine.speed = originalSpeed; // ObnovenÌ p˘vodnÌ rychlosti nep¯Ìtele
         Debug.Log("Enemy speed restored to " + stateMachine.speed);
+
+        if (freezeEffect != null)
+        {
+            freezeEffect.Stop();
+        }
+
     }
 
 

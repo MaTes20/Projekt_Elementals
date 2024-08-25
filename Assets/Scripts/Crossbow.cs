@@ -8,12 +8,14 @@ public class Crossbow : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
 
+    public Animator animator;
     private float timer;
     private GameObject player;
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = GetComponent<Animator>();
     }
 
     
@@ -52,6 +54,7 @@ public class Crossbow : MonoBehaviour
 
     void shoot()
     {
+        animator.SetTrigger("Shoot");
         Instantiate(bullet, bulletPos.position, bulletPos.rotation);
     }
 }

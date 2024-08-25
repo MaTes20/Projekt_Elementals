@@ -167,7 +167,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &115568194
 GameObject:
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 255958666}
   - component: {fileID: 255958668}
   - component: {fileID: 255958667}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1015,11 +1015,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 418367915725274857, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.5
+      value: -6.31
       objectReference: {fileID: 0}
     - target: {fileID: 418367915725274857, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.95
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 418367915725274857, guid: ee7c91ebef304c54ea3a4d8aebcb18db, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1232,16 +1232,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656312080}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1, y: 4.31, z: -0.12899798}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.74, y: 2.52, z: -0.076761425}
   m_LocalScale: {x: 0.83206, y: 0.83206, z: 0.83206}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1468332193}
   - {fileID: 1100363890}
   - {fileID: 1501878553}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1960060425}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &754355618
 GameObject:
@@ -1402,7 +1402,7 @@ Transform:
   - {fileID: 1552911341}
   - {fileID: 1684399540}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &769721402
 GameObject:
@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 808114453}
   - component: {fileID: 808114452}
   - component: {fileID: 808114454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26456,7 +26456,7 @@ Transform:
   m_Children:
   - {fileID: 754355620}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942048739
 GameObject:
@@ -26489,7 +26489,7 @@ Transform:
   - {fileID: 1538909056}
   - {fileID: 115568195}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038204694
 GameObject:
@@ -26502,7 +26502,7 @@ GameObject:
   - component: {fileID: 1038204695}
   - component: {fileID: 1038204697}
   - component: {fileID: 1038204696}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26766,7 +26766,7 @@ GameObject:
   - component: {fileID: 1151528549}
   - component: {fileID: 1151528551}
   - component: {fileID: 1151528550}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27026,7 +27026,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181914780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.599998, y: -1.07, z: -10}
+  m_LocalPosition: {x: -3.409999, y: -1.5600001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27182,7 +27182,7 @@ GameObject:
   - component: {fileID: 1302492199}
   - component: {fileID: 1302492198}
   - component: {fileID: 1302492197}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27327,7 +27327,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1363229141
 GameObject:
@@ -28861,7 +28861,7 @@ GameObject:
   - component: {fileID: 1848520900}
   - component: {fileID: 1848520902}
   - component: {fileID: 1848520901}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crate (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29075,6 +29075,8 @@ Transform:
   - {fileID: 1496615151}
   - {fileID: 1565200042}
   - {fileID: 246611227}
+  - {fileID: 2037664397}
+  - {fileID: 656312081}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -29289,13 +29291,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037664395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.79, y: 3.44, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.630001, y: 1.6500001, z: 0.052236557}
   m_LocalScale: {x: 0.29289, y: 0.29289, z: 0.29289}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1960060425}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053519836
 GameObject:
@@ -29331,7 +29333,7 @@ Transform:
   - {fileID: 1038204695}
   - {fileID: 1848520900}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2092228345
 GameObject:
