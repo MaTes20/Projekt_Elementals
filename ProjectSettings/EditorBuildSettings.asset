@@ -9,21 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/LevelSelector.unity
-    guid: 5b64fe5079b9ff04c97b99b5adc9a398
-  - enabled: 1
-    path: Assets/Scenes/Controls.unity
-    guid: 68ff377dc195bdb4982a491e44d53213
-  - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: 0a9e95d053c67834cb6e15235fb48b40
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: f6fa54677e643614abfc19520fcd2110
-  - enabled: 1
-    path: Assets/Scenes/SkipTutorial.unity
-    guid: 8291f73ff8f167d4e9b14f7e8de28bda
-  - enabled: 1
     path: Assets/Scenes/Level 1.unity
     guid: ce4eaf34d88b9864b8e72b1106487efc
   - enabled: 1
@@ -41,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 6.unity
     guid: a5c6b69a6b72b2544b9a284ae76b44f5
+  - enabled: 1
+    path: Assets/Scenes/LevelSelector.unity
+    guid: 5b64fe5079b9ff04c97b99b5adc9a398
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 68ff377dc195bdb4982a491e44d53213
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 0a9e95d053c67834cb6e15235fb48b40
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: f6fa54677e643614abfc19520fcd2110
   m_configObjects: {}

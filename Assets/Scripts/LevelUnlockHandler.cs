@@ -10,39 +10,36 @@ public class LevelUnlockHandler : MonoBehaviour
 
     private void Start()
     {
-        // Reset PlayerPrefs jen jednou pøi startu hry
-        if (!PlayerPrefs.HasKey("hasResetLevels"))
+
+        // Reset PlayerPrefs pøi prvním spuštìní
+        if (!PlayerPrefs.HasKey("levelsUnlocked"))
         {
-            PlayerPrefs.DeleteAll();
             PlayerPrefs.SetInt("levelsUnlocked", 1);
-            PlayerPrefs.SetInt("hasResetLevels", 1);
             PlayerPrefs.Save();
         }
 
+        // Naètìte poèet odemknutých úrovní
         unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocked");
 
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
-
+        // Nastavte tlaèítka
+        UpdateButtonInteractable();
     }
 
     private void Update()
     {
+        // Continuously update button states
         unlockedLevelsNumber = PlayerPrefs.GetInt("levelsUnlocked");
-
-        for (int i = 0; i < unlockedLevelsNumber; i++)
-        {
-            if (i < unlockedLevelsNumber)
-            {
-                buttons[i].interactable = true;
-            }
-        }
+        UpdateButtonInteractable();
 
     }
 
-  
+    private void UpdateButtonInteractable()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = i < unlockedLevelsNumber;
+        }
+    }
 
 }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoneBullet : MonoBehaviour
 {
     public float speed = 15f;
-    public int damage = 30;
+    public int damage = 20;
     public float stopDuration = 2f;  // Duration for which the enemy's movement will be stopped
     public Rigidbody2D rb;
 

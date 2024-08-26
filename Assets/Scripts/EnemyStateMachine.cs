@@ -15,7 +15,7 @@ public class EnemyStateMachine : MonoBehaviour
     public EnemyState currentState;
     public Transform player; // Odkazuje na objekt hráèe
     public float aggroRange = 10f;
-    public float attackRange = 2f;
+    public float attackRange = 5f;
     public float attackCooldown = 1f;
     public int attackDamage = 20; // Poškození útoku nepøítele
     public LayerMask groundLayer;
@@ -27,6 +27,7 @@ public class EnemyStateMachine : MonoBehaviour
     private float attackCooldownTimer;
     private Rigidbody2D rb;
     private bool facingRight = true;
+    private Animator animator;
 
 
 
@@ -35,6 +36,7 @@ public class EnemyStateMachine : MonoBehaviour
         currentState = EnemyState.Guarding;
         attackCooldownTimer = 0f;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -56,12 +58,15 @@ public class EnemyStateMachine : MonoBehaviour
                 // Enemy is stopped, do nothing
                 rb.velocity = Vector2.zero; // Ensure enemy is not moving
                 rb.angularVelocity = 0f;
+                animator.SetBool("IsWalking", false);
                 break;
         }
     }
 
     void Guarding()
     {
+
+        animator.SetBool("IsWalking", false);
         if (Vector2.Distance(transform.position, player.position) < aggroRange)
         {
             currentState = EnemyState.Aggro;
@@ -70,30 +75,46 @@ public class EnemyStateMachine : MonoBehaviour
 
     void Aggro()
     {
-        if (Vector2.Distance(transform.position, player.position) < attackRange)
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        animator.SetBool("IsWalking", true);
+
+        if (distanceToPlayer < attackRange)
         {
             currentState = EnemyState.Attacking;
+            Debug.Log("Nepøítel pøešel do stavu Attacking.");
         }
-        else if (Vector2.Distance(transform.position, player.position) > aggroRange)
+        else if (distanceToPlayer > aggroRange)
         {
             currentState = EnemyState.Guarding;
+            Debug.Log("Nepøítel se vrátil do stavu Guarding.");
         }
         else
         {
             MoveTowardsPlayer();
+            animator.SetBool("IsWalking", true);  // Start walking animation
         }
     }
 
     void Attacking()
     {
+
         if (Vector2.Distance(transform.position, player.position) > attackRange)
         {
+            // Pokud hráè opustí dosah útoku, pøepnìte nepøítele zpìt do stavu Aggro
             currentState = EnemyState.Aggro;
+            Debug.Log("Nepøítel se vrátil do stavu Aggro.");
         }
-        else if (attackCooldownTimer <= 0f)
+        else
         {
-            Attack();
-            attackCooldownTimer = attackCooldown;
+            // Nepøítel útoèí, pokud cooldown vypršel
+            if (attackCooldownTimer <= 0f)
+            {
+                Attack();
+                attackCooldownTimer = attackCooldown;
+                animator.SetTrigger("Attack");  // Spuste animaci útoku
+                Debug.Log("Nepøítel útoèí.");
+            }
         }
     }
 

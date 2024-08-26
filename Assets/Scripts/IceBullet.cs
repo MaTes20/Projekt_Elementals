@@ -6,7 +6,7 @@ public class IceBullet : MonoBehaviour
 {
 
     public float speed = 13f;
-    public int damage = 20;
+    public int damage = 10;
     public float freezeDuration = 3f;
     public float freezeAmount = 0.5f;
 

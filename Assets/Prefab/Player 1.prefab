@@ -127,14 +127,13 @@ GameObject:
   - component: {fileID: 418367915725274859}
   - component: {fileID: 2126325066253407675}
   - component: {fileID: 3970059073886955274}
-  - component: {fileID: 620458610348598708}
-  - component: {fileID: 8005148903013092125}
   - component: {fileID: 5205099374310994555}
   - component: {fileID: 3844145184970882296}
   - component: {fileID: 2193277215658083934}
   - component: {fileID: 418367915725274772}
   - component: {fileID: 418367915725274773}
   - component: {fileID: 418367915725274774}
+  - component: {fileID: 333308458}
   m_Layer: 6
   m_Name: Player 1
   m_TagString: Player
@@ -248,48 +247,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
---- !u!58 &620458610348598708
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418367915725274858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6c43e5d97d6f4c545ae98457bbddc083, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.51}
-  serializedVersion: 2
-  m_Radius: 0.658381
---- !u!61 &8005148903013092125
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418367915725274858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 6c43e5d97d6f4c545ae98457bbddc083, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.68}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.6131154, y: 1.3976805}
-  m_EdgeRadius: 0
 --- !u!50 &5205099374310994555
 Rigidbody2D:
   serializedVersion: 4
@@ -473,6 +430,22 @@ MonoBehaviour:
   damage: 20
   timer: {fileID: 0}
   healthbar: {fileID: 784944082937424007}
+--- !u!70 &333308458
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418367915725274858}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04086685, y: 0.1907196}
+  m_Size: {x: 1.5262527, y: 2.83454}
+  m_Direction: 0
 --- !u!1 &418367915973139725
 GameObject:
   m_ObjectHideFlags: 0

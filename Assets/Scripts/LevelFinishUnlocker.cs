@@ -13,9 +13,10 @@ public class LevelFinishUnlocker : MonoBehaviour
         {
             numberOfUnlockedLevels = PlayerPrefs.GetInt("levelsUnlocked");
 
-            if (numberOfUnlockedLevels <= levelToUnlock)
+            if (numberOfUnlockedLevels < levelToUnlock)
             {
-                PlayerPrefs.SetInt("levelsUnlocked", numberOfUnlockedLevels + 1);
+                PlayerPrefs.SetInt("levelsUnlocked", levelToUnlock);
+                PlayerPrefs.Save(); // Uložení zmìn
             }
         }
     }

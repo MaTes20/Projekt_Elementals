@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
 
     private EnemyStateMachine stateMachine;
     public Rigidbody2D rb;
+    private GameObject player;
 
     public ScoreManager scoreManager;
     public Healthbar healthbar;
@@ -22,10 +23,12 @@ public class Enemy : MonoBehaviour
     public ParticleSystem fireEffect;
     public ParticleSystem freezeEffect;
     public ParticleSystem hitEffect;
+    public ParticleSystem windEffect;
 
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         scoreManager = FindObjectOfType<ScoreManager>();
@@ -47,6 +50,11 @@ public class Enemy : MonoBehaviour
         if (hitEffect != null)
         {
             hitEffect.Stop();
+        }
+
+        if (windEffect != null)
+        {
+            windEffect.Stop();
         }
 
     }
@@ -209,6 +217,10 @@ public class Enemy : MonoBehaviour
 
     public void StartPushing(float forceAmount, float duration)
     {
+        if (windEffect != null)
+        {
+            windEffect.Play();
+        }
         StartCoroutine(Push(forceAmount, duration));
     }
 
@@ -216,13 +228,16 @@ public class Enemy : MonoBehaviour
     {
         float elapsedTime = 0;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+        Vector2 pushDirection = (transform.position - player.transform.position).normalized;
+
         if (rb != null)
         {
             while (elapsedTime < duration)
             {
                 // Zde mùžeš aplikovat sílu na základì toho, co je v tvém testu
                 Debug.Log("Applying push force: " + forceAmount);
-                rb.AddForce(Vector2.right * forceAmount, ForceMode2D.Impulse);
+                rb.AddForce(pushDirection * forceAmount, ForceMode2D.Impulse);
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
@@ -230,6 +245,11 @@ public class Enemy : MonoBehaviour
         else
         {
             Debug.LogError("No Rigidbody2D found on enemy!");
+        }
+
+        if (windEffect != null)
+        {
+            windEffect.Stop();
         }
     }
 }

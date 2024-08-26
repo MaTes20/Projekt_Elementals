@@ -5,8 +5,8 @@ using UnityEngine;
 public class WindBullet : MonoBehaviour
 {
     public float speed = 25f;
-    public int damage = 25;
-    public float pushForce = 15f; // Zvýšená síla pro lepší viditelnost
+    public int damage = 15;
+    public float pushForce = 10f; // Zvýšená síla pro lepší viditelnost
 
     public Rigidbody2D rb;
 
